@@ -5,7 +5,6 @@ const gulp = require("gulp");
 const terser = require("gulp-terser");
 const tslint = require("gulp-tslint");
 const typescript = require("gulp-typescript");
-const uglify = require("gulp-uglify");
 
 const ts_project = typescript.createProject("tsconfig.json");
 
