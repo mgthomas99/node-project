@@ -1,9 +1,6 @@
 {
   "private": true,
   "name": "node-project",
-  "version": "1.0.0",
-  "description": "An empty Node.js project",
-  "main": "build/index.js",
   "scripts": {
     "build": "gulp \"build\"",
     "clean": "gulp \"clean\"",
@@ -13,14 +10,6 @@
     "lint": "gulp \"lint\"",
     "start": "node \"build/index.js\""
   },
-  "keywords": [
-    "boilerplate",
-    "node",
-    "project",
-    "template"
-  ],
-  "author": "George Thomas",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^10.10.1",
     "del": "^3.0.0",
