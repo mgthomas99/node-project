@@ -1,8 +1,8 @@
-const babel = require("gulp-babel");
 const buffer = require("vinyl-buffer");
 const del = require("del");
 const eslint = require("gulp-eslint");
 const gulp = require("gulp");
+const terser = require("gulp-terser");
 const tslint = require("gulp-tslint");
 const typescript = require("gulp-typescript");
 const uglify = require("gulp-uglify");
@@ -12,14 +12,12 @@ const ts_project = typescript.createProject("tsconfig.json");
 gulp.task("build", function () {
   return gulp.src("src/**/*.ts")
       .pipe(ts_project())
-      .pipe(babel())
       .pipe(gulp.dest("build/"));
 });
 
 gulp.task("clean", function () {
   return del([
     "build/",
-    "dist/",
     "log/"
   ]);
 });
@@ -27,7 +25,7 @@ gulp.task("clean", function () {
 gulp.task("dist", ["build"], function () {
   return gulp.src("build/**/*.js")
       .pipe(buffer())
-      .pipe(uglify())
+      .pipe(terser())
       .pipe(gulp.dest("dist/"));
 });
 
